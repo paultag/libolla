@@ -34,11 +34,8 @@
 #include <unistd.h>
 #include <dlfcn.h>
 
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netdb.h>
-
 #include "domain_expander.h"
+#include "getaddrinfo.h"
 
 /**
  * POSIX call to resolve a DNS name to all sorts of different goodies.
