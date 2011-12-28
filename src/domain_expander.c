@@ -37,7 +37,6 @@ int _check_ender( const char * host, const char * tld, const char * expand ) {
 int _inner_expand( const char * c, char ** result,
     const char * tld, const char * domain
 ) {
-
     if ( _check_ender( c, tld, domain ) > 0 ) {
         char * subdomain;
         substr( c, &subdomain, 0, (strlen(c) - strlen(tld)) );
@@ -51,6 +50,39 @@ int _inner_expand( const char * c, char ** result,
 }
 
 int expand_domain( const char * c, char ** result ) {
-    return _inner_expand( c, result, "d.o", "debian.org" );
+
+    int ret = -1;
+
+    char line[256];
+    FILE * fd;
+
+    fd = fopen( "/etc/olla.conf", "r" );
+    if ( ! fd ) {
+        return -1;
+    }
+
+    int alive = 1;
+
+    while ( fgets( line, sizeof(line), fd) != NULL && alive ) {
+        char * key   = strtok(line, ":");
+        char * value = strtok(NULL, ":");
+
+        if ( key != NULL && value != NULL ) {
+
+            int vlen = strlen(value) - 1;
+            if ( value[vlen] == '\n' ) {
+                value[vlen] = '\0';
+            }
+
+            int rez = _inner_expand( c, result, key, value );
+
+            if ( rez > 0 ) {
+                printf( "Expanding TLD: %s to %s\n", key, value );
+                alive = 0;
+                ret   = 1;
+            }
+        }
+    }
+    fclose( fd );
 }
 

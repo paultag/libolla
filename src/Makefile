@@ -4,7 +4,7 @@ include $(BUILDCHAIN)/library-info.mk
 LIB=../lib/
 INC=../include/
 
-TARGETS=$(shell ls *.c | sed s/.c/.o/g)
+TARGETS=$(shell ls *.c | sed s/.c$$/.o/g)
 CFLAGS=-Wall -c -fPIC -I$(INC)
 CC=gcc
 
