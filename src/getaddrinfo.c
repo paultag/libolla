@@ -25,9 +25,7 @@ int getaddrinfo ( const char * node, const char * service,
 
     char * result;
 
-    if ( expand_domain( node, &result ) ) {
-        printf("Expanded domain\n");
-        printf("%s\n", result );
+    if ( expand_domain( node, &result ) > 0 ) {
         return orig_addr(result, service, hints, res );
     }
 

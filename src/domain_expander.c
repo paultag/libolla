@@ -38,7 +38,7 @@ int _inner_expand( const char * c, char ** result,
     const char * tld, const char * domain
 ) {
 
-    if ( _check_ender( c, tld, domain ) ) {
+    if ( _check_ender( c, tld, domain ) > 0 ) {
         char * subdomain;
         substr( c, &subdomain, 0, (strlen(c) - strlen(tld)) );
         *result = malloc( sizeof(char) * strlen(subdomain) + strlen(domain));
