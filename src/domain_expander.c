@@ -77,12 +77,13 @@ int expand_domain( const char * c, char ** result ) {
             int rez = _inner_expand( c, result, key, value );
 
             if ( rez > 0 ) {
-                printf( "Expanding TLD: %s to %s\n", key, value );
                 alive = 0;
                 ret   = 1;
             }
         }
     }
     fclose( fd );
+
+    return ret;
 }
 
