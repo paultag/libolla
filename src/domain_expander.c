@@ -113,6 +113,9 @@ int _inner_expand( const char * c, char ** result,
  */
 int expand_domain( const char * c, char ** result ) {
 
+    if ( c == NULL )
+        return -1;
+
     int ret = -1;
 
     char line[256];
