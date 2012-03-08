@@ -46,8 +46,8 @@ int substr( const char * host, char ** res, int start, int len ) {
 
     char * result = malloc( sizeof(char) * ( len + 1 ));
 
-    int i;
-    for ( i = start; i < ( start + len ); ++i ) {
+    int i = start;
+    for ( ; i < ( start + len ); ++i ) {
         result[i - start] = host[i];
     }
     result[i - start] = '\0';

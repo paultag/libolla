@@ -3,6 +3,8 @@
 * src/domain_expander.c (_check_ender): Added a free call after the substr
 call, which was causing a memory leak.
 (_inner_expand): Same as above.
+(substr): Moved the int init to outside the for loop, since we use it outside
+the loop anyway. This is just stylistic.
 
 2012-03-07:  Paul Tagliamonte  <tag@pault.ag>
 
