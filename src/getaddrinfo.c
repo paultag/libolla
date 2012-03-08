@@ -1,16 +1,16 @@
 /*
  * Copyright (c) 2011 Paul Tagliamonte <tag@pault.ag>
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
  * to deal in the Software without restriction, including without limitation
  * the rights to use, copy, modify, merge, publish, distribute, sublicense,
  * and/or sell copies of the Software, and to permit persons to whom the
  * Software is furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
@@ -24,7 +24,7 @@
 /* This horseshit hack brought to you by the fine folks over at wherever
  * the fuck this came from. This breaks in Cygwin. Not that that really
  * matters in this small case.
- * 
+ *
  * Because fuck you, that's why.
  *  -- Someone with GNU, I'm sure.
  */
@@ -44,7 +44,7 @@
  * actually resolved, in the case of shorthand addresses. In the case we can't
  * mangle, we'll pass through. Otherwise, we pass the mangled address back to
  * the system default lib.
- * 
+ *
  * @param node address to resolve
  * @param service same as the backing impl
  * @param hints same as the backing impl
