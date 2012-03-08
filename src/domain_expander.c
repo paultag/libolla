@@ -30,6 +30,9 @@
  * char pointer, rather it returns a bool. Please pass in the result into
  * the function.
  *
+ * It should also be noted that this *will* malloc a new char array, so please
+ * do remember to free the result, or you may have some leaking memory.
+ *
  * @param host string to get the substring *out* of
  * @param res where we should copy the output *to* (unmalloc'd please)
  * @param start index to start from
@@ -66,16 +69,19 @@ int substr( const char * host, char ** res, int start, int len ) {
  *
  */
 int _check_ender( const char * host, const char * tld, const char * expand ) {
-    char * res;
+    char * res = NULL;
+    int ret = -1;
     if ( substr( host, &res, (strlen(host) - strlen(tld)), strlen(tld) ) ) {
         if ( strcmp( res, tld ) == 0 ) {
-            return 1;
+            ret = 1;
         } else {
-            return -1;
+            ret = -1;
         }
     } else {
-        return -2;
+        ret = -2;
     }
+    free(res);
+    return ret;
 }
 
 /**
@@ -93,11 +99,12 @@ int _inner_expand( const char * c, char ** result,
     const char * tld, const char * domain
 ) {
     if ( _check_ender( c, tld, domain ) > 0 ) {
-        char * subdomain;
+        char * subdomain = NULL;
         substr( c, &subdomain, 0, (strlen(c) - strlen(tld)) );
         *result = malloc( sizeof(char) * strlen(subdomain) + strlen(domain));
         strcpy( *result, subdomain );
         strcat( *result, domain );
+        free(subdomain);
         return 1;
     } else {
         return -1;
