@@ -6,6 +6,9 @@ call, which was causing a memory leak.
 (substr): Moved the int init to outside the for loop, since we use it outside
 the loop anyway. This is just stylistic.
 
+* README: Added a cluase on why we're actually using Expat rather then GPL,
+considering how much of a GPL advocate I am.
+
 2012-03-07:  Paul Tagliamonte  <tag@pault.ag>
 
 * src/Makefile (LDFLAGS): Added -ldl. Since there is an issue with ld's

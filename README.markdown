@@ -18,8 +18,21 @@ will connect to `git.debian.org`.
 as an alias for debian.org) `ssh` will think d.o is a valid address, since the
 `getaddrinfo` call went through, so beware flaky fingerprinting / key stuff.
 
+Why is this not GPL'd?
+----------------------
 
-Please send patches back up :)
+Well, simple answer - since this is made to be pre-loaded against applications
+which might not be GPL compatable, this may (under some readings of the GPL)
+count as linking against the library (or at the least, sharing memory), which
+may in fact (INAL) create a situation where the user is violating the GPL during
+it's intended use - rather then protecting you, it may open you up to legal
+grey-areas.
 
-Cheers!
-  Paul
+I do encourage you to consider using the GPL for other projects, the concept
+of copyleft is in fact very important to end users.
+
+The shame of it is that in this very odd case, the GPL may actually expose the
+user to more risk then a non-GPL license.
+
+I also do acknowlage that the LGPL may be a good fit for this, but I've just
+gone Expat.
