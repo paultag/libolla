@@ -3,3 +3,15 @@
 * src/domain_expander.c (_check_ender): Added a free call after the substr
 call, which was causing a memory leak.
 (_inner_expand): Same as above.
+
+2012-03-07:  Paul Tagliamonte  <tag@pault.ag>
+
+* src/Makefile (LDFLAGS): Added -ldl. Since there is an issue with ld's
+--as-needed flag, I've turned on --no-as-needed, to ensure libdl gets linked.
+Thanks for this goes to git, for using a util that wasn't linked against
+libdl.
+
+* src/domain_expander.c (expand_domain): added a check to see if c is null,
+since they can really pass us any ole' garbage, and a null call will result in
+a segfault. Should be fixed now. Thanks to some half-baked app for finding
+this out.
