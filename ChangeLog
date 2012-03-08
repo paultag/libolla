@@ -1,0 +1,5 @@
+2012-03-08  Paul Tagliamonte  <tag@pault.ag>
+
+* src/domain_expander.c (_check_ender): Added a free call after the substr
+call, which was causing a memory leak.
+(_inner_expand): Same as above.
