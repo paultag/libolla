@@ -1,0 +1,16 @@
+Source: libolla
+Section: libs
+Priority: optional
+Maintainer: Paul Tagliamonte <paultag@ubuntu.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.3
+Homepage: https://github.com/paultag/libolla
+
+Package: libolla1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: jank hostnames into line with nasty hax
+ PRELOAD this for fun and sport.
+ foo
+ bar baz
+ bar baz foo bar
