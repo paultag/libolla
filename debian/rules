@@ -1,7 +1,3 @@
 #!/usr/bin/make -f
 %:
 	dh $@
-
-override_dh_auto_clean:
-	git clean -fdx
-	dh_auto_clean
