@@ -1,5 +1,5 @@
-libolla (1.0) UNRELEASED; urgency=low
+libolla (1.0) wicked; urgency=low
 
   * Initial release.
 
- -- Paul Tagliamonte <paultag@ubuntu.com>  Thu, 21 Oct 2010 21:00:59 -0400
+ -- Paul Tagliamonte <paultag@ubuntu.com>  Mon, 04 Jun 2012 22:18:12 -0400
