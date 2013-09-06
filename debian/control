@@ -5,11 +5,12 @@ Maintainer: Paul Tagliamonte <paultag@debian.org>
 Build-Depends: debhelper (>= 9), bash-completion,
 Standards-Version: 3.9.4
 Homepage: http://github.com/paultag/libolla
-X-Python-Version: >= 2.7
+Vcs-Git: git://github.com/paultag/libolla.git
+Vcs-Browser: https://github.com/paultag/libolla
 
 Package: olla
 Architecture: any
-Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Recommends: bash-completion
 Description: hack to avoid typing out full domains
  By overrideing `getaddrinfo`, we can use shorthand domains, such
