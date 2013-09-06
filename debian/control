@@ -11,5 +11,15 @@ Package: olla
 Architecture: any
 Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}
 Recommends: bash-completion
-Description: ...
- ...
+Description: hack to avoid typing out full domains
+ By overrideing `getaddrinfo`, we can use shorthand domains, such
+ as `d.o`, or `d.n` to talk about `debian.org` or `debian.net`
+ domains.
+ .
+ This means such stuff as:
+ .
+   git clone git.d.o:/git/collab-maint/dputng.git
+ .
+ will work without any sort of trouble at all.
+ .
+ Since we're all lazy. You know.
