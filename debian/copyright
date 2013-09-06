@@ -1,0 +1,9 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0
+Upstream-Name: libolla
+Upstream-Contact: Paul Tagliamonte <tag@pault.ag>
+Source: https://github.com/paultag/libolla
+
+Files: *
+Copyright: 2012, Paul Tagliamonte <paultag@ubuntu.com>
+License: Expat
+ ..

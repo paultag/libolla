@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --with bash-completion
+
+OLLA_ROOT = debian/olla
+OLLA_PRIVATE = $(OLLA_ROOT)/usr/lib/olla/
+
+override_dh_auto_install:
+	# Right. OK. So, installing this in public is really really fucking
+	# stupid. I'm going to avoid doing this on any important system.
+	mkdir -vp $(OLLA_PRIVATE)
+	cp -v lib/*.so* $(OLLA_PRIVATE)
