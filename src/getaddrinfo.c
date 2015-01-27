@@ -23,11 +23,7 @@
 #define _GNU_SOURCE 1
 /* This horseshit hack brought to you by the fine folks over at wherever
  * the fuck this came from. This breaks in Cygwin. Not that that really
- * matters in this small case.
- *
- * Because fuck you, that's why.
- *  -- Someone with GNU, I'm sure.
- */
+ * matters in this small case. */
 
 #include <stdio.h>
 #include <stdlib.h>
