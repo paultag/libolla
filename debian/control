@@ -4,7 +4,7 @@ Priority: extra
 Maintainer: Paul Tagliamonte <paultag@debian.org>
 Build-Depends: debhelper (>= 9), bash-completion,
 Standards-Version: 3.9.4
-Homepage: http://github.com/paultag/libolla
+Homepage: https://github.com/paultag/libolla
 Vcs-Git: git://github.com/paultag/libolla.git
 Vcs-Browser: https://github.com/paultag/libolla
 
